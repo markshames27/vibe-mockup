@@ -2,7 +2,8 @@
 
 **Project**: Paint Color Visualizer (VirtualPainter)  
 **Date Created**: December 15, 2025  
-**Workflow**: Vibe Mockup - Skill 2
+**Date Updated**: December 15, 2025  
+**Workflow**: Vibe Mockup - Skill 2 (Updated with Mermaid Diagrams)
 
 ---
 
@@ -47,119 +48,48 @@ Set up the paint visualizer widget on their website and start receiving leads fr
    - Yes → Click to email/call
    - No → Continue browsing leads
 
-### ASCII Visualization
+### Mermaid Diagram
 
-```
-[START: Painting Company Owner Journey]
-                    |
-                    v
-            (Landing Page)
-                    |
-                    v
-        {Already have account?}
-                    |
-        +-----------+-----------+
-        |                       |
-       Yes                     No
-        |                       |
-        v                       v
-   (Login Screen)        (Sign Up Screen)
-        |                       |
-        |                       v
-        |              {Choose Pricing Tier}
-        |                       |
-        |           +-----------+-----------+
-        |           |           |           |
-        |        Starter    Professional Enterprise
-        |           |           |           |
-        |           +-----+-----+-----+-----+
-        |                       |
-        +----------+------------+
-                   |
-                   v
-            (Dashboard Home)
-                   |
-                   v
-        (Set Up Color Palette)
-         - Choose 12 colors
-         - Preview colors
-         - Save palette
-                   |
-                   v
-          (Get Embed Code)
-         - Copy iframe code
-         - View instructions
-                   |
-                   v
-        {Need help with integration?}
-                   |
-        +----------+----------+
-        |                    |
-       Yes                  No
-        |                    |
-        v                    |
-   (Tutorial/Support)        |
-        |                    |
-        +----------+---------+
-                   |
-                   v
-     (Add Widget to Website)
-      - Paste code on site
-      - Test functionality
-                   |
-                   v
-        (Wait for Leads)
-                   |
-                   v
-     [ONGOING: Lead Management Loop]
-                   |
-                   v
-    (Receive Lead Notification)
-      - Email alert
-      - Dashboard notification
-                   |
-                   v
-         (View Lead Details)
-      - Name, email, phone
-      - House photo
-      - Selected color
-                   |
-                   v
-      {Want to contact lead?}
-                   |
-        +----------+----------+
-        |                    |
-       Yes                  No
-        |                    |
-        v                    v
-   (Contact Lead)      (Continue to
-    - Email/Call        next lead)
-    - Schedule quote         |
-        |                    |
-        +----------+---------+
-                   |
-                   v
-       (Monitor Usage Dashboard)
-      - View analytics
-      - Check visualization count
-      - Track conversion metrics
-                   |
-                   v
-         {Continue using?}
-                   |
-        +----------+----------+
-        |                    |
-       Yes                  No
-        |                    |
-        v                    v
-   (Back to        (Cancel Subscription)
-    Dashboard)               |
-        |                    v
-        |               [END: Churn]
-        |
-        +---> [LOOP BACK TO: Wait for Leads]
-
-[END: Painting Company Owner Journey]
+```mermaid
+graph TD
+    Start((Painting Company Owner Arrives)) --> Landing[Landing Page]
+    Landing --> HasAccount{Already Have Account?}
+    
+    HasAccount -->|Yes| Login[Login Screen]
+    HasAccount -->|No| Signup[Sign Up Screen]
+    
+    Signup --> PricingTier{Choose Pricing Tier}
+    PricingTier -->|Starter $49| Dashboard[Dashboard Home]
+    PricingTier -->|Professional $99| Dashboard
+    PricingTier -->|Enterprise $199| Dashboard
+    
+    Login --> Dashboard
+    
+    Dashboard --> ColorPalette[Set Up Color Palette]
+    ColorPalette --> EmbedCode[Get Embed Code]
+    
+    EmbedCode --> NeedHelp{Need Help with Integration?}
+    NeedHelp -->|Yes| Tutorial[Tutorial/Support]
+    NeedHelp -->|No| AddWidget[Add Widget to Website]
+    Tutorial --> AddWidget
+    
+    AddWidget --> WaitLeads[Wait for Leads]
+    
+    WaitLeads --> LeadNotification[Receive Lead Notification]
+    LeadNotification --> ViewLead[View Lead Details]
+    
+    ViewLead --> ContactDecision{Want to Contact Lead?}
+    ContactDecision -->|Yes| ContactLead[Contact Lead via Email/Call]
+    ContactDecision -->|No| NextLead[Continue to Next Lead]
+    
+    ContactLead --> MonitorUsage[Monitor Usage Dashboard]
+    NextLead --> MonitorUsage
+    
+    MonitorUsage --> ContinueUsing{Continue Using?}
+    ContinueUsing -->|Yes| WaitLeads
+    ContinueUsing -->|No| CancelSubscription[Cancel Subscription]
+    
+    CancelSubscription --> End((Churn))
 ```
 
 ### Screens Needed (Painting Company Owner)
@@ -209,124 +139,48 @@ Visualize their house in different paint colors and request a quote from the pai
    - Yes → Fill out contact form
    - No → Exit widget
 
-### ASCII Visualization
+### Mermaid Diagram
 
-```
-[START: Homeowner Journey]
-                    |
-                    v
-      (Painting Company Website)
-                    |
-                    v
-        (VirtualPainter Widget)
-         - "See Your House in
-            Any Color!"
-                    |
-                    v
-          (Upload Photo Screen)
-                    |
-                    v
-          {Camera or File?}
-                    |
-        +-----------+-----------+
-        |                       |
-      Camera                  File
-        |                       |
-        v                       v
-   (Take Photo)         (Choose from
-    with camera          Gallery)
-        |                       |
-        +----------+------------+
-                   |
-                   v
-         (Photo Preview)
-      - Confirm photo quality
-      - Retake if needed
-                   |
-                   v
-            {Photo OK?}
-                   |
-        +----------+----------+
-        |                    |
-       Yes                  No
-        |                    |
-        v                    v
-   (Processing         (Back to
-    Screen)             Upload)
-    - AI analyzing           |
-    - Detecting walls        |
-    - "Please wait..."       |
-        |                    |
-        +--------------------+
-        |
-        v
-    (Color Selection Screen)
-     - Grid of 12 colors
-     - Color names
-     - Tap to preview
-                   |
-                   v
-        (Select a Color)
-                   |
-                   v
-      (Visualization Result)
-     - House with new color
-     - Before/After slider
-     - Color name displayed
-                   |
-                   v
-      {Satisfied with result?}
-                   |
-        +----------+----------+
-        |                    |
-       No                   Yes
-        |                    |
-        v                    |
-   (Back to Color           |
-    Selection)               |
-        |                    |
-        +--------------------+
-                   |
-                   v
-       {Want to save/share?}
-                   |
-        +----------+----------+
-        |                    |
-       Yes                  No
-        |                    |
-        v                    |
-   (Download/Share)          |
-    - Save to phone          |
-    - Share via SMS/Email    |
-        |                    |
-        +----------+---------+
-                   |
-                   v
-     {Ready to request quote?}
-                   |
-        +----------+----------+
-        |                    |
-       Yes                  No
-        |                    |
-        v                    v
-   (Contact Form)       (Exit Widget)
-    - Name                   |
-    - Email                  v
-    - Phone            [END: No Lead]
-    - Message (optional)
-        |
-        v
-    (Submit Button)
-        |
-        v
-   (Thank You Screen)
-    - "We'll contact you soon!"
-    - Company contact info
-        |
-        v
-   [END: Lead Captured]
-
-[END: Homeowner Journey]
+```mermaid
+graph TD
+    Start((Homeowner Visits Website)) --> Website[Painting Company Website]
+    Website --> Widget[VirtualPainter Widget Landing]
+    
+    Widget --> UploadScreen[Upload Photo Screen]
+    UploadScreen --> UploadMethod{Camera or File?}
+    
+    UploadMethod -->|Camera| TakePhoto[Take Photo with Camera]
+    UploadMethod -->|File| ChooseFile[Choose from Gallery]
+    
+    TakePhoto --> PhotoPreview[Photo Preview]
+    ChooseFile --> PhotoPreview
+    
+    PhotoPreview --> PhotoOK{Photo OK?}
+    PhotoOK -->|No| UploadScreen
+    PhotoOK -->|Yes| Processing[Processing Screen - AI Analyzing]
+    
+    Processing --> ColorSelection[Color Selection Screen]
+    ColorSelection --> SelectColor[Select a Color]
+    
+    SelectColor --> Visualization[Visualization Result with Before/After Slider]
+    
+    Visualization --> Satisfied{Satisfied with Result?}
+    Satisfied -->|No| ColorSelection
+    Satisfied -->|Yes| SaveShare{Want to Save/Share?}
+    
+    SaveShare -->|Yes| Download[Download/Share Image]
+    SaveShare -->|No| ReadyQuote{Ready to Request Quote?}
+    
+    Download --> ReadyQuote
+    
+    ReadyQuote -->|No| ExitWidget[Exit Widget]
+    ReadyQuote -->|Yes| ContactForm[Contact Form]
+    
+    ContactForm --> Submit[Submit Quote Request]
+    Submit --> ThankYou[Thank You Screen]
+    
+    ThankYou --> EndLead((Lead Captured))
+    ExitWidget --> EndNoLead((No Lead))
 ```
 
 ### Screens Needed (Homeowner/Widget)
@@ -396,7 +250,7 @@ Visualize their house in different paint colors and request a quote from the pai
 ## Next Steps
 
 ✅ **Skill 1 Complete**: Lean Canvas created  
-✅ **Skill 2 Complete**: User flows mapped with ASCII diagrams  
+✅ **Skill 2 Complete**: User flows mapped with Mermaid diagrams  
 ⬜ **Skill 3**: Generate detailed mockups for each screen
 
 Ready to move to **Mockup Generation** (Skill 3)?
@@ -404,4 +258,5 @@ Ready to move to **Mockup Generation** (Skill 3)?
 ---
 
 **Created with**: Vibe Mockup Workflow  
-**Date**: December 15, 2025
+**Date**: December 15, 2025  
+**Updated**: December 15, 2025 (Converted to Mermaid diagrams)
