@@ -29,7 +29,7 @@ Creates a Lean Canvas to validate and structure your business model. Covers 9 ke
 **Output**: Completed Lean Canvas
 
 ### 2. User Flow Visualization (user-flow-visualization.md)
-Maps out the complete user journey through your application with ASCII art diagrams. Identifies all screens, decision points, and interactions.
+Maps out the complete user journey through your application with Mermaid diagrams. Identifies all screens, decision points, and interactions. Mermaid diagrams render beautifully on GitHub and in documentation tools.
 
 **Duration**: 20-40 minutes  
 **Output**: User flow diagram and screen list
@@ -46,7 +46,7 @@ Creates detailed, mobile-first mockup specifications for each screen. References
 The AI will guide you through creating a Lean Canvas by asking clarifying questions for each section. Provide thoughtful, concise answers.
 
 ### Step 2: Move to User Flow Visualization
-Once your Lean Canvas is complete, the AI will help you map out the user journey. You'll identify the primary goal, list main steps, identify decision points, and create an ASCII visualization.
+Once your Lean Canvas is complete, the AI will help you map out the user journey. You'll identify the primary goal, list main steps, identify decision points, and create a Mermaid diagram visualization that renders as a beautiful flowchart.
 
 ### Step 3: Generate Mockups
 With your user flow defined, the AI will create detailed mockup descriptions for each screen, including layout, components, interactions, and responsive behavior.
@@ -136,13 +136,10 @@ You can also use individual skills independently for specific purposes:
 - Use **mockup-generation.md** to create mockups for a defined flow
 
 ## Example Projects
-
 After using this workflow, you'll have:
-1. A validated business model (Lean Canvas)
-2. A clear user journey (User Flow with ASCII diagram)
-3. Detailed screen specifications (Mockups)
-
-These deliverables are ready to:
+1.  A validated business model (Lean Canvas)
+2.  A clear user journey (User Flow with Mermaid diagram)
+3.  Detailed screen specifications (Mockups)These deliverables are ready to:
 - Share with stakeholders for feedback
 - Hand off to a development team
 - Use for building a prototype or MVP
