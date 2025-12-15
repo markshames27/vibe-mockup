@@ -66,6 +66,16 @@ I will provide:
 3. List of all screens/pages needed
 4. Key interactions and decision points
 
+## Saving Your Progress
+
+At any point, you can save your work to GitHub by typing:
+
+```
+save session
+```
+
+I will save your user flow and all previous work to the repository.
+
 ## Next Steps
 
 Once complete, move to the mockup-generation skill to create visual specifications for each screen.

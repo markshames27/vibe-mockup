@@ -44,6 +44,16 @@ What gives you an unfair advantage that can't be easily copied?
 
 I will provide a completed Lean Canvas in a structured format that you can reference throughout your project.
 
+## Saving Your Progress
+
+At any point, you can save your work to GitHub by typing:
+
+```
+save session
+```
+
+I will create a project directory, save your Lean Canvas, and commit it to the repository.
+
 ## Next Steps
 
 Once complete, move to the user-flow-visualization skill to map out how users interact with your product.

@@ -97,6 +97,16 @@ I will provide:
 4. Interaction specifications
 5. Notes on responsive behavior
 
+## Saving Your Progress
+
+At any point, you can save your work to GitHub by typing:
+
+```
+save session
+```
+
+I will save all your mockups and the complete project to the repository.
+
 ## Next Steps
 
-You now have a complete visual specification ready for development.
+You now have a complete visual specification ready for development. Use "save session" to preserve your complete project on GitHub.
