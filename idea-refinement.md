@@ -44,16 +44,23 @@ What gives you an unfair advantage that can't be easily copied?
 
 I will provide a completed Lean Canvas in a structured format that you can reference throughout your project.
 
-## Saving Your Progress
+## Automatic Save to GitHub
 
-At any point, you can save your work to GitHub by typing:
+After completing your Lean Canvas, I will **automatically save your work to GitHub**.
+
+I will:
+1. Clone or update the vibe-mockup repository
+2. Create a project directory named after your idea
+3. Save your Lean Canvas as `lean-canvas.md`
+4. Commit and push to GitHub
+5. **Report which files were uploaded** and provide the GitHub URL
+
+You can also manually save at any point by typing:
 
 ```
 save session
 ```
 
-I will create a project directory, save your Lean Canvas, and commit it to the repository.
-
 ## Next Steps
 
-Once complete, move to the user-flow-visualization skill to map out how users interact with your product.
+Once complete and saved, move to the user-flow-visualization skill to map out how users interact with your product.

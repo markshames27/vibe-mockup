@@ -252,15 +252,25 @@ Once generated, you can:
 </form>
 ```
 
-## Saving Your Progress
+## Automatic Save to GitHub
 
-At any point, you can save your work to GitHub by typing:
+After completing your mockups and prototype, I will **automatically save everything to GitHub**.
+
+I will:
+1. Update your project directory in the vibe-mockup repository
+2. Save your Mockup specifications as `mockups.md`
+3. Save all HTML prototype files to `prototype/` folder:
+   - `index.html`, `screen-2.html`, etc.
+4. Save all screenshots to `prototype/screenshots/` folder
+5. Update any existing files (Lean Canvas, User Flow)
+6. Commit and push to GitHub
+7. **Report which files were uploaded** with a complete file list and provide the GitHub URL
+
+You can also manually save at any point by typing:
 
 ```
 save session
 ```
-
-I will save all your mockups, the complete prototype (including all HTML files), and screenshots to the repository.
 
 ## Next Steps
 
@@ -270,7 +280,7 @@ You now have a complete visual specification and **working clickable prototype**
 - **Development handoff** - Developers can reference or convert the code
 - **Design iteration** - Easy to modify and improve based on feedback
 
-Use **"save session"** to preserve your complete project (including the clickable prototype) on GitHub.
+All files are automatically saved to GitHub with a detailed report of what was uploaded.
 
 ## Why This Approach Works
 

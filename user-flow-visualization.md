@@ -88,16 +88,23 @@ I will provide:
 
 The Mermaid diagram will render automatically on GitHub, in documentation tools, and most markdown viewers.
 
-## Saving Your Progress
+## Automatic Save to GitHub
 
-At any point, you can save your work to GitHub by typing:
+After completing your user flow, I will **automatically save your work to GitHub**.
+
+I will:
+1. Update your project directory in the vibe-mockup repository
+2. Save your User Flow as `user-flow.md` (including the Mermaid diagram)
+3. Update any existing files (Lean Canvas)
+4. Commit and push to GitHub
+5. **Report which files were uploaded** and provide the GitHub URL
+
+You can also manually save at any point by typing:
 
 ```
 save session
 ```
 
-I will save your user flow and all previous work to the repository.
-
 ## Next Steps
 
-Once complete, move to the mockup-generation skill to create visual specifications for each screen.
+Once complete and saved, move to the mockup-generation skill to create visual specifications and a clickable prototype for each screen.

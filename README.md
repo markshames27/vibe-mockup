@@ -51,20 +51,26 @@ Once your Lean Canvas is complete, the AI will help you map out the user journey
 ### Step 3: Generate Mockups and Prototype
 With your user flow defined, the AI will create detailed mockup descriptions for each screen and build a fully interactive HTML prototype using Tailwind CSS and Alpine.js. You'll get working HTML files you can open in any browser, click through, and test immediately—no installation required.
 
-### Step 4: Save Your Session
-At any point during the workflow, you can save your progress to GitHub by typing:
+### Step 4: Automatic Save to GitHub
+
+**Your work is automatically saved to GitHub after completing each skill.**
+
+After each skill completion (Idea Refinement, User Flow, Mockups), the AI will:
+1.  Clone or update the vibe-mockup repository
+2.  Create/update a project directory named after your idea
+3.  Save all outputs (Lean Canvas, User Flow, Mockups) as markdown files
+4.  Save the complete clickable prototype (all HTML files and screenshots)
+5.  Commit and push the files to GitHub
+6.  **Report which files were uploaded** with a complete file list
+7.  Provide you with a link to your saved project on GitHub
+
+You can also manually save at any point by typing:
 
 ```
 save session
 ```
 
-The AI will:
-1.  Create a new directory in this repository named after your project
-2.  Save all outputs (Lean Canvas, User Flow, Mockups) as markdown files
-3.  Save the complete clickable prototype (all HTML files and screenshots)
-4.  Commit and push the files to GitHub
-5.  Provide you with a link to your saved project
-This allows you to:
+Automatic saving allows you to:
 - Resume work later from where you left off
 - Share your progress with team members
 - Track iterations and changes over time
