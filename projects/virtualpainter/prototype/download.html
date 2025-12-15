@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save & Share - VirtualPainter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-white min-h-screen p-4">
+    <div class="max-w-md mx-auto pt-8" x-data="{ saved: false, shared: false }">
+        <!-- Back Button -->
+        <a href="result.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to Result
+        </a>
+
+        <!-- Widget Container -->
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-purple-600 to-purple-700 p-6 text-center">
+                <div class="w-12 h-12 bg-white rounded-full mx-auto mb-3 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold text-white mb-2">Save & Share</h1>
+                <p class="text-purple-100 text-sm">Keep your visualization or share it with others</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="p-6">
+                <!-- Preview Thumbnail -->
+                <div class="mb-6">
+                    <div class="relative rounded-xl overflow-hidden border-4 border-gray-200">
+                        <div class="aspect-[4/3] bg-gradient-to-br from-[#B2C9AB] to-[#8FAA88] flex items-center justify-center">
+                            <div class="text-center">
+                                <svg class="w-16 h-16 mx-auto text-white mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                </svg>
+                                <p class="text-white font-medium text-sm">Sage Green</p>
+                            </div>
+                        </div>
+                        <!-- Watermark -->
+                        <div class="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+                            VirtualPainter
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save & Share Options -->
+                <div class="space-y-3 mb-6">
+                    <!-- Download Button -->
+                    <button @click="saved = true"
+                            class="w-full border-2 border-blue-500 hover:bg-blue-50 text-blue-600 font-semibold py-4 px-6 rounded-xl transition-all flex items-center justify-center group">
+                        <svg class="w-6 h-6 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        <span x-text="saved ? 'Saved to Device! ✓' : 'Download to Device'"></span>
+                    </button>
+
+                    <!-- Share Button -->
+                    <button @click="shared = true"
+                            class="w-full border-2 border-green-500 hover:bg-green-50 text-green-600 font-semibold py-4 px-6 rounded-xl transition-all flex items-center justify-center group">
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                        </svg>
+                        <span x-text="shared ? 'Share Link Copied! ✓' : 'Share via SMS/Email'"></span>
+                    </button>
+                </div>
+
+                <!-- Success Messages -->
+                <div x-show="saved" 
+                     x-transition
+                     class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-green-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div>
+                            <h4 class="font-semibold text-green-900">Image Saved!</h4>
+                            <p class="text-sm text-green-800">Check your downloads folder</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div x-show="shared" 
+                     x-transition
+                     class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div>
+                            <h4 class="font-semibold text-blue-900">Share Link Ready!</h4>
+                            <p class="text-sm text-blue-800">Link copied to clipboard</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continue Button -->
+                <a href="contact.html" class="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-6 rounded-xl text-center transition-all transform hover:scale-105 shadow-lg">
+                    <span class="text-lg">Continue - Get Free Quote</span>
+                    <svg class="w-5 h-5 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+
+                <!-- Skip Link -->
+                <div class="text-center mt-4">
+                    <a href="contact.html" class="text-gray-500 text-sm hover:text-gray-700 underline">
+                        Skip - Go directly to quote request
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Color - VirtualPainter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-white min-h-screen p-4">
+    <div class="max-w-md mx-auto pt-8" x-data="{ selectedColor: null }">
+        <!-- Back Button -->
+        <a href="preview.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back
+        </a>
+
+        <!-- Widget Container -->
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-center">
+                <h1 class="text-2xl font-bold text-white mb-2">Choose Your Color</h1>
+                <p class="text-blue-100 text-sm">Tap any color to see it on your house</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="p-6">
+                <!-- Progress Indicator -->
+                <div class="flex items-center justify-center mb-8">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">✓</div>
+                        <div class="w-16 h-1 bg-blue-600"></div>
+                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">✓</div>
+                        <div class="w-16 h-1 bg-blue-600"></div>
+                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+                    </div>
+                </div>
+
+                <!-- Color Grid -->
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <!-- Color 1: Classic White -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Classic White'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-white"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Classic White</p>
+                    </a>
+
+                    <!-- Color 2: Warm Beige -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Warm Beige'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#F5E6D3]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Warm Beige</p>
+                    </a>
+
+                    <!-- Color 3: Soft Gray -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Soft Gray'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#D3D3D3]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Soft Gray</p>
+                    </a>
+
+                    <!-- Color 4: Sage Green -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Sage Green'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#B2C9AB]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Sage Green</p>
+                    </a>
+
+                    <!-- Color 5: Sky Blue -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Sky Blue'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#A7C7E7]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Sky Blue</p>
+                    </a>
+
+                    <!-- Color 6: Coastal Blue -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Coastal Blue'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#5B9AA0]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Coastal Blue</p>
+                    </a>
+
+                    <!-- Color 7: Terracotta -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Terracotta'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#E07A5F]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Terracotta</p>
+                    </a>
+
+                    <!-- Color 8: Charcoal -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Charcoal'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#3D3D3D]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Charcoal</p>
+                    </a>
+
+                    <!-- Color 9: Navy Blue -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Navy Blue'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#2C3E50]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Navy Blue</p>
+                    </a>
+
+                    <!-- Color 10: Olive Green -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Olive Green'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#808000]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Olive Green</p>
+                    </a>
+
+                    <!-- Color 11: Cream -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Cream'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#FFFDD0]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Cream</p>
+                    </a>
+
+                    <!-- Color 12: Desert Sand -->
+                    <a href="result.html" 
+                       class="group cursor-pointer"
+                       @click="selectedColor = 'Desert Sand'">
+                        <div class="aspect-square rounded-xl border-4 border-gray-200 hover:border-blue-500 transition-all overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="w-full h-full bg-[#EDC9AF]"></div>
+                        </div>
+                        <p class="text-center text-sm font-medium text-gray-700 mt-2 group-hover:text-blue-600">Desert Sand</p>
+                    </a>
+                </div>
+
+                <!-- Info -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p class="text-sm text-blue-800 text-center">
+                        <svg class="w-5 h-5 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                        </svg>
+                        Tap any color to see it applied to your house
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

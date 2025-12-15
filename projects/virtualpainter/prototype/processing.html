@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing - VirtualPainter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        // Auto-redirect after 3 seconds to simulate processing
+        setTimeout(() => {
+            window.location.href = 'color-selection.html';
+        }, 3000);
+    </script>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-white min-h-screen p-4 flex items-center justify-center">
+    <div class="max-w-md w-full" x-data="{ progress: 0 }" x-init="setInterval(() => { if(progress < 90) progress += 10 }, 300)">
+        <!-- Widget Container -->
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-center">
+                <h1 class="text-2xl font-bold text-white mb-2">Processing Your Photo</h1>
+                <p class="text-blue-100 text-sm">Our AI is analyzing your house...</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="p-8">
+                <!-- Progress Indicator -->
+                <div class="flex items-center justify-center mb-8">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">✓</div>
+                        <div class="w-16 h-1 bg-blue-600"></div>
+                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">✓</div>
+                        <div class="w-16 h-1 bg-blue-600"></div>
+                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                            <div class="animate-spin">⟳</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading Animation -->
+                <div class="flex justify-center mb-8">
+                    <div class="relative">
+                        <!-- Outer spinning circle -->
+                        <div class="w-32 h-32 border-8 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                        <!-- Inner icon -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="mb-6">
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                        <span>Processing...</span>
+                        <span x-text="progress + '%'">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-600 to-blue-700 h-3 rounded-full transition-all duration-300 ease-out" 
+                             :style="'width: ' + progress + '%'"></div>
+                    </div>
+                </div>
+
+                <!-- Status Messages -->
+                <div class="space-y-3">
+                    <div class="flex items-center text-gray-700" x-show="progress >= 0">
+                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm">Uploading photo...</span>
+                    </div>
+                    <div class="flex items-center text-gray-700" x-show="progress >= 30">
+                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm">Detecting walls with AI...</span>
+                    </div>
+                    <div class="flex items-center text-gray-700" x-show="progress >= 60">
+                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm">Preparing color options...</span>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="mt-8 text-center">
+                    <p class="text-gray-500 text-sm">
+                        This usually takes 5-10 seconds
+                    </p>
+                    <div class="flex items-center justify-center mt-2 text-gray-400 text-xs">
+                        <svg class="w-4 h-4 mr-1 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Secure & Private
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
