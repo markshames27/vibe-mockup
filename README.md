@@ -35,10 +35,10 @@ Maps out the complete user journey through your application with Mermaid diagram
 **Output**: User flow diagram and screen list
 
 ### 3. Mockup Generation (mockup-generation.md)
-Creates detailed, mobile-first mockup specifications for each screen. References components from [ui.shadcn.com](https://ui.shadcn.com) for consistent, accessible design.
+Creates detailed, mobile-first mockup specifications for each screen and generates a clickable HTML prototype using Tailwind CSS and Alpine.js. This LLM-optimized stack ensures accurate code generation and professional results.
 
 **Duration**: 30-60 minutes  
-**Output**: Complete mockup specifications for all screens
+**Output**: Complete mockup specifications, interactive clickable prototype (HTML files), and screenshots
 
 ## How to Use the Workflow
 
@@ -48,8 +48,8 @@ The AI will guide you through creating a Lean Canvas by asking clarifying questi
 ### Step 2: Move to User Flow Visualization
 Once your Lean Canvas is complete, the AI will help you map out the user journey. You'll identify the primary goal, list main steps, identify decision points, and create a Mermaid diagram visualization that renders as a beautiful flowchart.
 
-### Step 3: Generate Mockups
-With your user flow defined, the AI will create detailed mockup descriptions for each screen, including layout, components, interactions, and responsive behavior.
+### Step 3: Generate Mockups and Prototype
+With your user flow defined, the AI will create detailed mockup descriptions for each screen and build a fully interactive HTML prototype using Tailwind CSS and Alpine.js. You'll get working HTML files you can open in any browser, click through, and test immediately—no installation required.
 
 ### Step 4: Save Your Session
 At any point during the workflow, you can save your progress to GitHub by typing:
@@ -59,11 +59,11 @@ save session
 ```
 
 The AI will:
-1. Create a new directory in this repository named after your project
-2. Save all outputs (Lean Canvas, User Flow, Mockups) as markdown files
-3. Commit and push the files to GitHub
-4. Provide you with a link to your saved project
-
+1.  Create a new directory in this repository named after your project
+2.  Save all outputs (Lean Canvas, User Flow, Mockups) as markdown files
+3.  Save the complete clickable prototype (all HTML files and screenshots)
+4.  Commit and push the files to GitHub
+5.  Provide you with a link to your saved project
 This allows you to:
 - Resume work later from where you left off
 - Share your progress with team members
@@ -84,7 +84,15 @@ vibe-mockup/
     └── your-project-name/
         ├── lean-canvas.md
         ├── user-flow.md
-        └── mockups.md
+        ├── mockups.md
+        └── prototype/
+            ├── index.html
+            ├── screen-2.html
+            ├── screen-3.html
+            └── screenshots/
+                ├── screen-1.png
+                ├── screen-2.png
+                └── screen-3.png
 ```
 
 ## Resuming a Saved Project
@@ -139,11 +147,17 @@ You can also use individual skills independently for specific purposes:
 After using this workflow, you'll have:
 1.  A validated business model (Lean Canvas)
 2.  A clear user journey (User Flow with Mermaid diagram)
-3.  Detailed screen specifications (Mockups)These deliverables are ready to:
-- Share with stakeholders for feedback
-- Hand off to a development team
-- Use for building a prototype or MVP
-- Guide user testing and iteration
+3.  Detailed screen specifications (Mockups)
+4.  A working clickable prototype (HTML files with Tailwind CSS and Alpine.js)
+5.  Screenshots of all screens
+
+These deliverables are ready to:
+- **Test immediately** - Open the prototype in any browser and click through
+- **Share with stakeholders** - Demo the working prototype for feedback
+- **Hand off to developers** - Clear specifications and working code reference
+- **Conduct user testing** - Get real feedback on the interactive prototype
+- **Build an MVP** - Use as a foundation for development
+- **Iterate and improve** - Easy to modify based on feedback
 
 ## Support
 
