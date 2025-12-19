@@ -18,6 +18,60 @@ source /Users/mdejmek/Documents/desktopc/github_config.txt
 -H "Accept: application/vnd.github.v3+json"
 ```
 
+## 🔒 Privacy & Security Settings
+
+### CRITICAL: Default Repository Privacy
+**ALL new repositories MUST be created as PRIVATE by default.**
+
+### Set GitHub Account Default to Private
+1. Visit: https://github.com/settings/repositories
+2. Under "Repository default visibility" select **Private**
+3. This ensures web-created repositories are private by default
+
+### Check for Public Repositories (ALERT FUNCTION)
+Use this function to scan for any public repositories and get alerts:
+
+```bash
+gh_check_public() {
+    source /Users/mdejmek/Documents/desktopc/github_config.txt
+    echo "🔍 Scanning for public repositories..."
+    
+    public_repos=$(curl -s -H "Authorization: token ${github_token}" \
+         -H "Accept: application/vnd.github.v3+json" \
+         "https://api.github.com/user/repos?per_page=100&visibility=public" | \
+         jq -r '.[] | .name')
+    
+    if [ -z "$public_repos" ]; then
+        echo "✅ All repositories are private"
+    else
+        echo "⚠️  WARNING: Found PUBLIC repositories:"
+        echo "$public_repos" | while read repo; do
+            echo "  🔓 ${repo} - https://github.com/${github_username}/${repo}"
+        done
+        echo ""
+        echo "To make them private, visit repository settings or use:"
+        echo "  gh_make_private REPO_NAME"
+    fi
+}
+```
+
+### Convert Repository to Private
+```bash
+# Function to make a repository private
+gh_make_private() {
+    source /Users/mdejmek/Documents/desktopc/github_config.txt
+    local repo_name=$1
+    
+    curl -X PATCH -H "Authorization: token ${github_token}" \
+         -H "Accept: application/vnd.github.v3+json" \
+         -d '{"private":true}' \
+         "https://api.github.com/repos/${github_username}/${repo_name}"
+    
+    echo "✅ ${repo_name} is now private"
+}
+# Usage: gh_make_private vibe-mockup
+```
+
 ## Common Operations
 
 ### 1. List Repositories
@@ -75,17 +129,19 @@ curl -H "Authorization: token ${github_token}" \
      "https://api.github.com/repos/${github_username}/REPO_NAME/contents/path/to/file.txt"
 ```
 ### 6. Create New Repository
-```bash
-# Create public repository
-curl -X POST -H "Authorization: token ${github_token}" \
-     -H "Accept: application/vnd.github.v3+json" \
-     -d '{"name":"new-repo","description":"Repository description","private":false}' \
-     "https://api.github.com/user/repos"
+**⚠️ IMPORTANT: Always create repositories as PRIVATE by default**
 
-# Create private repository
+```bash
+# Create PRIVATE repository (RECOMMENDED - DEFAULT)
 curl -X POST -H "Authorization: token ${github_token}" \
      -H "Accept: application/vnd.github.v3+json" \
      -d '{"name":"new-repo","description":"Repository description","private":true}' \
+     "https://api.github.com/user/repos"
+
+# Create public repository (ONLY if explicitly required)
+curl -X POST -H "Authorization: token ${github_token}" \
+     -H "Accept: application/vnd.github.v3+json" \
+     -d '{"name":"new-repo","description":"Repository description","private":false}' \
      "https://api.github.com/user/repos"
 ```
 
@@ -128,10 +184,10 @@ git status
 # Load credentials
 source /Users/mdejmek/Documents/desktopc/github_config.txt
 
-# Create repository via API
+# Create repository via API (PRIVATE by default)
 curl -X POST -H "Authorization: token ${github_token}" \
      -H "Accept: application/vnd.github.v3+json" \
-     -d '{"name":"my-new-project","description":"My project description","private":false}' \
+     -d '{"name":"my-new-project","description":"My project description","private":true}' \
      "https://api.github.com/user/repos"
 
 # Initialize local repository and push
@@ -205,12 +261,19 @@ curl -X PATCH -H "Authorization: token ${github_token}" \
 ```
 ## Best Practices
 
-### 1. Token Management
+### 1. Repository Privacy (CRITICAL)
+- **ALWAYS create repositories as PRIVATE by default** (`"private":true`)
+- Set GitHub account default to private: https://github.com/settings/repositories
+- Run `gh_check_public` regularly to audit repository visibility
+- Only make repositories public if explicitly required for open source
+- Review and convert any accidental public repositories immediately
+
+### 2. Token Management
 - Store tokens in the configuration file at `/Users/mdejmek/Documents/desktopc/github_config.txt`
 - Load credentials using `source` command before operations
 - Use environment variables for automation scripts
 
-### 2. Rate Limiting
+### 3. Rate Limiting
 - GitHub API allows 5,000 requests per hour for authenticated requests
 - Check rate limit status:
 ```bash
@@ -218,12 +281,12 @@ curl -H "Authorization: token ${github_token}" \
      "https://api.github.com/rate_limit"
 ```
 
-### 3. Pagination
+### 4. Pagination
 - API returns 30 items by default, max 100 per page
 - Use `per_page` parameter to control results
 - Follow `Link` headers for pagination
 
-### 4. Repository Organization
+### 5. Repository Organization
 - Use clear, descriptive repository names
 - Maintain README.md files in all repositories
 - Use .gitignore to exclude sensitive files
