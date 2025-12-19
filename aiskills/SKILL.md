@@ -1,7 +1,13 @@
-# GitHub Repository Access Skill
+# GitHub Repository Management & Privacy Control
+
+**Skill Name:** `github-repo-manager`  
+**Version:** `1.0.0`  
+**Last Updated:** December 18, 2024  
+**Author:** Markus Dejmek  
+**Category:** Development Tools / Version Control
 
 ## Overview
-This skill provides comprehensive guidance for accessing and managing GitHub repositories using the GitHub API and CLI tools. It covers authentication, repository operations, and common workflows.
+This skill provides comprehensive guidance for accessing and managing GitHub repositories using the GitHub API and CLI tools. It emphasizes privacy-first practices, ensuring all repositories are private by default. Covers authentication, repository operations, privacy controls, and common workflows.
 
 ## Authentication
 
