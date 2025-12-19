@@ -9,7 +9,7 @@ My idea is: [Your application idea here]
 
 Please follow the Vibe Mockup Workflow defined at this GitHub repository: https://github.com/markshames27/vibe-mockup
 
-Follow the guidelines and instructions in the README. Start with the first skill, "idea-refinement.md", and guide me through the process of creating a Lean Canvas for my idea.
+Follow the guidelines and instructions in the README. Start with the first skill, "idea-refinement_v1.md", and guide me through the process of creating a Lean Canvas for my idea.
 ```
 
 ## Instructions

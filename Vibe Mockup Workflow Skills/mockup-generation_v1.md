@@ -1,15 +1,18 @@
----
-name: mockup-generation
-description: Generates web application mockups and clickable prototypes based on a user flow, using Tailwind CSS and Alpine.js. Use after the user flow has been defined.
----
+# Mockup Generation & Clickable Prototypes
 
-# Mockup Generation Skill
+**Skill Name:** `mockup-generation`  
+**Version:** `1.0.0`  
+**Last Updated:** December 18, 2024  
+**Author:** Markus Dejmek  
+**Category:** UI/UX Design / Prototyping  
+**Workflow Position:** Step 3 of 3 (Vibe Mockup Workflow)
 
 ## Overview
 
-This skill helps you create visual mockups and a **clickable interactive prototype** for each screen in your user flow. Mockups will be designed with a mobile-first approach using industry-standard tools that LLMs excel at generating.
+This skill helps you create visual mockups and a **clickable interactive prototype** for each screen in your user flow. Mockups will be designed with a mobile-first approach using industry-standard tools that LLMs excel at generating. Use this skill after completing your user flow visualization.
 
-**Output**: A fully functional, clickable HTML prototype that works immediately in any browser—no installation or build tools required.
+**Duration:** 30-60 minutes  
+**Output:** Complete mockup specifications, interactive clickable prototype (HTML files), and screenshots saved to GitHub
 
 ## Technology Stack
 

@@ -1,13 +1,18 @@
----
-name: idea-refinement
-description: Guides a user through creating a Lean Canvas to refine a business or product idea. Use when a user has a new idea and needs to develop a business plan.
----
+# Idea Refinement & Lean Canvas Creation
 
-# Idea Refinement Skill
+**Skill Name:** `idea-refinement`  
+**Version:** `1.0.0`  
+**Last Updated:** December 18, 2024  
+**Author:** Markus Dejmek  
+**Category:** Business Planning / Product Development  
+**Workflow Position:** Step 1 of 3 (Vibe Mockup Workflow)
 
 ## Overview
 
-This skill guides you through creating a Lean Canvas for your idea. The Lean Canvas is a 1-page business plan template that helps you deconstruct your idea into its key assumptions.
+This skill guides you through creating a Lean Canvas for your idea. The Lean Canvas is a 1-page business plan template that helps you deconstruct your idea into its key assumptions. Use this skill when you have a new product or business idea and need to develop a structured business plan.
+
+**Duration:** 15-30 minutes  
+**Output:** Completed Lean Canvas document saved to GitHub
 
 ## Process
 

@@ -1,5 +1,10 @@
 # Vibe Mockup Workflow
 
+**Workflow Version:** `1.0.0`  
+**Last Updated:** December 18, 2024  
+**Author:** Markus Dejmek  
+**Category:** Product Development / UX Design
+
 A modular workflow for building web application mockups with AI assistance. This workflow guides you from initial idea refinement to detailed mockup generation through three focused skills.
 
 ## Quick Start
@@ -13,7 +18,7 @@ My idea is: [Your application idea here]
 
 Please follow the Vibe Mockup Workflow defined at this GitHub repository: https://github.com/markshames27/vibe-mockup
 
-Follow the guidelines and instructions in the README. Start with the first skill, "idea-refinement.md", and guide me through the process of creating a Lean Canvas for my idea.
+Follow the guidelines and instructions in the README. Start with the first skill, "idea-refinement_v1.md", and guide me through the process of creating a Lean Canvas for my idea.
 ```
 
 Replace `[Your application idea here]` with your actual idea.
@@ -22,19 +27,19 @@ Replace `[Your application idea here]` with your actual idea.
 
 The workflow consists of three sequential skills:
 
-### 1. Idea Refinement (idea-refinement.md)
+### 1. Idea Refinement (idea-refinement_v1.md)
 Creates a Lean Canvas to validate and structure your business model. Covers 9 key sections: Problem, Customer Segments, Unique Value Proposition, Solution, Channels, Revenue Streams, Cost Structure, Key Metrics, and Unfair Advantage.
 
 **Duration**: 15-30 minutes  
 **Output**: Completed Lean Canvas
 
-### 2. User Flow Visualization (user-flow-visualization.md)
+### 2. User Flow Visualization (user-flow-visualization_v1.md)
 Maps out the complete user journey through your application with Mermaid diagrams. Identifies all screens, decision points, and interactions. Mermaid diagrams render beautifully on GitHub and in documentation tools.
 
 **Duration**: 20-40 minutes  
 **Output**: User flow diagram and screen list
 
-### 3. Mockup Generation (mockup-generation.md)
+### 3. Mockup Generation (mockup-generation_v1.md)
 Creates detailed, mobile-first mockup specifications for each screen and generates a clickable HTML prototype using Tailwind CSS and Alpine.js. This LLM-optimized stack ensures accurate code generation and professional results.
 
 **Duration**: 30-60 minutes  

@@ -1,13 +1,18 @@
----
-name: user-flow-visualization
-description: Helps a user describe and visualize a user flow using Mermaid diagrams. Use after the idea has been refined and before creating mockups.
----
+# User Flow Visualization with Mermaid Diagrams
 
-# User Flow Visualization Skill
+**Skill Name:** `user-flow-visualization`  
+**Version:** `1.0.0`  
+**Last Updated:** December 18, 2024  
+**Author:** Markus Dejmek  
+**Category:** UX Design / User Experience  
+**Workflow Position:** Step 2 of 3 (Vibe Mockup Workflow)
 
 ## Overview
 
-This skill helps you map out the user journey through your application and visualize it using Mermaid diagrams. A clear user flow is the blueprint for your mockups and ensures a logical, user-friendly experience.
+This skill helps you map out the user journey through your application and visualize it using Mermaid diagrams. A clear user flow is the blueprint for your mockups and ensures a logical, user-friendly experience. Use this skill after completing your Lean Canvas and before creating mockups.
+
+**Duration:** 20-40 minutes  
+**Output:** User flow diagram (Mermaid) and complete screen list saved to GitHub
 
 ## Process
 
