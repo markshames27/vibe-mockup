@@ -1,13 +1,44 @@
 # GitHub Repository Management & Privacy Control
 
 **Skill Name:** `github-repo-manager`  
-**Version:** `1.0.0`  
+**Version:** `1.1.0`  
 **Last Updated:** December 18, 2024  
 **Author:** Markus Dejmek  
 **Category:** Development Tools / Version Control
 
 ## Overview
 This skill provides comprehensive guidance for accessing and managing GitHub repositories using the GitHub API and CLI tools. It emphasizes privacy-first practices, ensuring all repositories are private by default. Covers authentication, repository operations, privacy controls, and common workflows.
+
+## Skill File Naming Convention
+
+### Standard Format
+Skills should follow this naming pattern:
+```
+skillname_v#.md
+```
+
+**Components:**
+- `skillname`: Descriptive kebab-case name (e.g., `github-repo-manager`)
+- `_v#`: Version number (e.g., `_v1`, `_v2`, `_v3`)
+- `.md`: Markdown file extension
+
+### Examples
+- `github-repo-manager_v1.md` - Version 1.0.0
+- `github-repo-manager_v2.md` - Version 2.0.0
+- `docker-deployment_v1.md` - Different skill, version 1
+- `aws-infrastructure_v3.md` - Different skill, version 3
+
+### Versioning Guidelines
+- **Major version change (v1 → v2):** Breaking changes, complete rewrites, or major feature additions
+- **Keep old versions:** Maintain previous version files for backward compatibility
+- **Update metadata:** Always update the Version field inside the file when creating new versions
+
+### Benefits
+1. **Clear identification:** Immediately know what the skill does
+2. **Version tracking:** Easy to see which version you're using
+3. **Parallel versions:** Can maintain multiple versions simultaneously
+4. **Organized:** Skills are easy to find and manage
+5. **Professional:** Follows standard naming conventions
 
 ## Authentication
 
